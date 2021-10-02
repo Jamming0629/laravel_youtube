@@ -24,16 +24,16 @@ class LineApiController extends Controller
     // Webhook受取処理
     public function postWebhook(Request $request) {
     $input = $request->all();
-    if($input != null){
+    // ユーザーがどういう操作を行った処理なのかを取得
+    $type  = $input['events'][0]['type'];
+        if($type != null){
         return 'ok';
     }
-    // ユーザーがどういう操作を行った処理なのかを取得
-    //$type  = $input['events'][0]['type'];
 
     // タイプごとに分岐
-    //switch ($type) {
+    /*switch ($type) {
         // メッセージ受信
-        /*case 'message':
+        case 'message':
             // 返答に必要なトークンを取得
             $reply_token = $input['events'][0]['replyToken'];
             // テスト投稿の場合
