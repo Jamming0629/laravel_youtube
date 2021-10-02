@@ -23,10 +23,10 @@ class LineApiController extends Controller
     }
     // Webhook受取処理
     public function postWebhook(Request $request) {
-    $input = $request->all();
+    //$input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
-    $type  = $input['events'][0]['type'];
-    //$type = $request->input('events.0.type');
+    //$type  = $input['events'][0]['type'];
+    $type = $request->input('events.0.type');
     // タイプごとに分岐
     switch ($type) {
         // メッセージ受信
@@ -40,12 +40,12 @@ class LineApiController extends Controller
                 return;
             }
             // Lineに送信する準備
-            $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
+            /*$http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
             // LINEの投稿処理
             $message_data = "メッセージありがとうございます。ただいま準備中です";
             $response     = $bot->replyText($reply_token, $message_data);
-            
+            */
             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
             $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
  
@@ -90,6 +90,14 @@ class LineApiController extends Controller
             break;
 
         default:
+            $http_client = new CurlHTTPClient(config('services.line.channel_token'));
+            $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
+ 
+            // 送信するメッセージの設定
+            $reply_message='メッセージありがとうございます';
+ 
+            // ユーザーにメッセージを返す
+            $reply=$bot->replyText($reply_token, $reply_message);
             Log::info("the type is" . $type);
             break;
     }
