@@ -26,7 +26,8 @@ class LineApiController extends Controller
     //$input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
     //$type  = $input['events'][0]['type'];
-    $type = $request->input('events.0.type');
+    //$type = $request->input('events.0.type');
+    $type = $request['events'][0]['type'];
     dd($type);
     // タイプごとに分岐
     switch ($type) {
@@ -34,7 +35,8 @@ class LineApiController extends Controller
         case 'message':
             // 返答に必要なトークンを取得
             //$reply_token = $input['events'][0]['replyToken'];
-            $reply_token = $request->input('events.0.replyToken');
+            //$reply_token = $request->input('events.0.replyToken');
+            $reply_token = $request['events'][0]['replyToken'];
             // テスト投稿の場合
             if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
@@ -90,7 +92,8 @@ class LineApiController extends Controller
             break;
 
         default:
-            $reply_token = $request->input('events.0.replyToken');
+            //$reply_token = $request->input('events.0.replyToken');
+            $reply_token = $request['events'][0]['replyToken'];
             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
             $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
  
