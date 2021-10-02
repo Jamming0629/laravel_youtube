@@ -38,16 +38,16 @@ class LineApiController extends Controller
             $reply_token = $request->input('events.0.replyToken');
             //$reply_token = $request['events'][0]['replyToken'];
             // テスト投稿の場合
-            if ($reply_token == '00000000000000000000000000000000') {
+            /*if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
                 return;
-            }
+            }*/
             // Lineに送信する準備
             $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
             // LINEの投稿処理
             $message_data = "メッセージありがとうございます。ただいま準備中です";
-            $response     = $bot->replyMessage($reply_token, $message_data);
+            $response     = $bot->replyText($reply_token, $message_data);
             
             //$http_client = new CurlHTTPClient(config('services.line.channel_token'));
             //$bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
@@ -105,7 +105,7 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-    return;
+    return  $response;
     }
     
     // メッセージ送信用
