@@ -27,6 +27,7 @@ class LineApiController extends Controller
     // ユーザーがどういう操作を行った処理なのかを取得
     //$type  = $input['events'][0]['type'];
     $type = $request->input('events.0.type');
+    dd($type);
     // タイプごとに分岐
     switch ($type) {
         // メッセージ受信
@@ -48,7 +49,6 @@ class LineApiController extends Controller
             */
             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
             $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
- 
             // 送信するメッセージの設定
             $reply_message='メッセージありがとうございます';
  
