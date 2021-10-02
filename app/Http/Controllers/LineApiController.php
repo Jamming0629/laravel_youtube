@@ -32,7 +32,7 @@ class LineApiController extends Controller
     // タイプごとに分岐
     switch ($type) {
         // メッセージ受信
-        case 'message':
+        case 'text':
             // 返答に必要なトークンを取得
             //$reply_token = $input['events'][0]['replyToken'];
             //$reply_token = $request->input('events.0.replyToken');
