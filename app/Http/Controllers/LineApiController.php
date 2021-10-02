@@ -43,12 +43,21 @@ class LineApiController extends Controller
                 return;
             }
             // Lineに送信する準備
-            $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
+            /*$http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
             // LINEの投稿処理
             $message_data = "メッセージありがとうございます。ただいま準備中です";
-            $response     = $bot->replyText($reply_token, 'メッセージありがとうございます。ただいま準備中です');
-
+            $response     = $bot->replyText($reply_token, $message_data);
+            */
+             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
+            $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
+ 
+            // 送信するメッセージの設定
+            $reply_message='メッセージありがとうございます';
+ 
+            // ユーザーにメッセージを返す
+            $reply=$bot->replyText($reply_token, $reply_message);
+            
             // Succeeded
             if ($response->isSucceeded()) {
                 Log::info('返信成功');
