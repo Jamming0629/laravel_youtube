@@ -24,7 +24,7 @@ Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 
 // line webhook受取用
 //Route::get('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
-Route::post('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
+Route::post('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook')->name('line.webhook');
 // line メッセージ送信用
 Route::get('/line/message/send', 'App\Http\Controllers\LineApiController@sendMessage');
 
