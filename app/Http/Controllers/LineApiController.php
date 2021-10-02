@@ -31,10 +31,10 @@ class LineApiController extends Controller
             // 返答に必要なトークンを取得
             $reply_token = $input['events'][0]['replyToken'];
             // テスト投稿の場合
-            if ($reply_token == '00000000000000000000000000000000') {
+            /*if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
                 return;
-            }
+            }*/
             // Lineに送信する準備
             $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
