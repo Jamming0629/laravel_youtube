@@ -24,7 +24,7 @@ class LineApiController extends Controller
     // Webhook受取処理
     public function postWebhook(Request $request) {
     $input = $request->all();
-    if($rewquest['events'] != []){
+    if($rewquest['events'] === []){
         return 'ok';
     }
     // ユーザーがどういう操作を行った処理なのかを取得
