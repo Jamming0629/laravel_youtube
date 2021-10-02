@@ -93,7 +93,7 @@ class LineApiController extends Controller
 
         default:
             //$reply_token = $request->input('events.0.replyToken');
-            $reply_token = $request['events'][0]['replyToken'];
+            /*$reply_token = $request['events'][0]['replyToken'];
             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
             $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
  
@@ -101,7 +101,7 @@ class LineApiController extends Controller
             $reply_message='メッセージありがとうございます';
  
             // ユーザーにメッセージを返す
-            $reply=$bot->replyText($reply_token, $reply_message);
+            $reply=$bot->replyText($reply_token, $reply_message);*/
             Log::info("the type is" . $type);
             break;
     }
