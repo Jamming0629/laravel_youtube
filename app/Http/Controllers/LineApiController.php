@@ -35,8 +35,8 @@ class LineApiController extends Controller
         case 'message':
             // 返答に必要なトークンを取得
             //$reply_token = $input['events'][0]['replyToken'];
-            //$reply_token = $request->input('events.0.replyToken');
-            $reply_token = $request['events'][0]['replyToken'];
+            $reply_token = $request->input('events.0.replyToken');
+            //$reply_token = $request['events'][0]['replyToken'];
             // テスト投稿の場合
             if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
