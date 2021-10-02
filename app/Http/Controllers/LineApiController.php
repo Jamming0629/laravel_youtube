@@ -22,7 +22,7 @@ class LineApiController extends Controller
     public function postWebhook(Request $request) {
     $input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
-    if( $input != NULL){
+    //if( $input != NULL){
         $type  = $input['events'][0]['type'];
     
             // タイプごとに分岐
@@ -56,7 +56,7 @@ class LineApiController extends Controller
                     Log::info("the type is" . $type);
                     break;
             }
-    }
+    //}
                return redirect('index');
     }
 
@@ -64,7 +64,7 @@ class LineApiController extends Controller
     public function sendMessage(Request $request) {
     $input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
-    if( $input != NULL){
+    //if( $input != NULL){
         $type  = $input['events'][0]['type'];
     
         // タイプごとに分岐
@@ -123,7 +123,7 @@ class LineApiController extends Controller
                 Log::info("the type is" . $type);
                 break;
         }
-    }
+    //}
        return redirect('index');
     }
     
