@@ -23,24 +23,25 @@ class LineApiController extends Controller
     }
     // Webhook受取処理
     public function postWebhook(Request $request) {
-    $input = $request->all();
-    if($rewquest != NULL){
+    //$input = $request->all();
+    /*if($rewquest != NULL){
         return 'ok';
-    }
+    }*/
     // ユーザーがどういう操作を行った処理なのかを取得
-    $type  = $input['events'][0]['type'];
-    
+    //$type  = $input['events'][0]['type'];
+    $type = $request->input('events.0.type');
     // タイプごとに分岐
-    /*switch ($type) {
+    switch ($type) {
         // メッセージ受信
         case 'message':
             // 返答に必要なトークンを取得
-            $reply_token = $input['events'][0]['replyToken'];
+            //$reply_token = $input['events'][0]['replyToken'];
+            $reply_token = $request->input('events.0.replyToken');
             // テスト投稿の場合
-            //if ($reply_token == '00000000000000000000000000000000') {
+            if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
                 return;
-            //}
+            }
             // Lineに送信する準備
             $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
@@ -86,7 +87,6 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-    */
     return 'ok';
     }
     
