@@ -33,7 +33,7 @@ class LineApiController extends Controller
             // テスト投稿の場合
             if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
-                return redirect('index');
+                return;
             }
             // Lineに送信する準備
             $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
@@ -81,7 +81,7 @@ class LineApiController extends Controller
             break;
     }
 
-    return redirect('index');
+    return;
     }
  
     // メッセージ送信用
