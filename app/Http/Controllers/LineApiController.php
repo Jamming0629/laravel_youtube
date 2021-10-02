@@ -47,7 +47,7 @@ class LineApiController extends Controller
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
             // LINEの投稿処理
             $message_data = "メッセージありがとうございます。ただいま準備中です";
-            $response     = $bot->replyText($reply_token, $message_data);
+            $response     = $bot->replyText($reply_token, 'メッセージありがとうございます。ただいま準備中です');
 
             // Succeeded
             if ($response->isSucceeded()) {
