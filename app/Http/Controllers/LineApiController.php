@@ -27,6 +27,7 @@ class LineApiController extends Controller
     // ユーザーがどういう操作を行った処理なのかを取得
     //$type  = $input['events'][0]['type'];
     $type = $request->input('events.0.type');
+    dd($type);
     //$type = $request['events'][0]['type'];
     //dd($type);
     // タイプごとに分岐
