@@ -87,7 +87,7 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-    return 'ok';
+    return;
     }
     
     // メッセージ送信用
