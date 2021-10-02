@@ -27,7 +27,7 @@ class LineApiController extends Controller
     // ユーザーがどういう操作を行った処理なのかを取得
     //$type  = $input['events'][0]['type'];
     $type = $request->input('events.0.type');
-    dd($type);
+    //dd($type);
     //$type = $request['events'][0]['type'];
     //dd($type);
     // タイプごとに分岐
@@ -36,13 +36,13 @@ class LineApiController extends Controller
         case 'message':
             // 返答に必要なトークンを取得
             //$reply_token = $input['events'][0]['replyToken'];
-            $reply_token = $request->input('events.0.source.userId');
+            $reply_token = $request->input('events.0.reply_token');
             //$reply_token = $request['events'][0]['replyToken'];
             // テスト投稿の場合
-            /*if ($reply_token == '00000000000000000000000000000000') {
+            if ($reply_token == '00000000000000000000000000000000') {
                 Log::info('Succeeded');
                 return;
-            }*/
+            }
             // Lineに送信する準備
             $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
@@ -106,7 +106,7 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-    return;
+    //return;
     }
     
     // メッセージ送信用
