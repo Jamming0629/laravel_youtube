@@ -90,6 +90,7 @@ class LineApiController extends Controller
             break;
 
         default:
+            $reply_token = $request->input('events.0.replyToken');
             $http_client = new CurlHTTPClient(config('services.line.channel_token'));
             $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
  
