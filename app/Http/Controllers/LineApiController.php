@@ -47,7 +47,7 @@ class LineApiController extends Controller
             $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
             // LINEの投稿処理
             $message_data = "メッセージありがとうございます。ただいま準備中です";
-            $response     = $bot->replyText($reply_token, $message_data);
+            $response     = $bot->replyMessage($reply_token, $message_data);
             
             //$http_client = new CurlHTTPClient(config('services.line.channel_token'));
             //$bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
@@ -105,7 +105,7 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-    //return;
+    return;
     }
     
     // メッセージ送信用
