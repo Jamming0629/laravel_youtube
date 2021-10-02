@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Log;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use LINE\LINEBot;
+use App\Models\User;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 class LineApiController extends Controller
 {
@@ -41,9 +45,9 @@ class LineApiController extends Controller
  
             // ユーザーにメッセージを返す
             $reply=$bot->replyText($reply_token, $reply_message);
-        */   
+        */  
             return 'ok';
-        }
+        //}
     }
  
     // メッセージ送信用
