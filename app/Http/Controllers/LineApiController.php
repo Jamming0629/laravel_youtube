@@ -26,9 +26,9 @@ class LineApiController extends Controller
     //$input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
     //$type  = $input['events'][0]['type'];
-    //$type = $request->input('events.0.type');
-    $type = $request['events'][0]['type'];
-    dd($type);
+    $type = $request->input('events.0.type');
+    //$type = $request['events'][0]['type'];
+    //dd($type);
     // タイプごとに分岐
     switch ($type) {
         // メッセージ受信
