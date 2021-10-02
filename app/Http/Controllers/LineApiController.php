@@ -28,9 +28,9 @@ class LineApiController extends Controller
     $type  = $input['events'][0]['type'];
 
     // タイプごとに分岐
-    switch ($type) {
+    //switch ($type) {
         // メッセージ受信
-        case 'message':
+        /*case 'message':
             // 返答に必要なトークンを取得
             $reply_token = $input['events'][0]['replyToken'];
             // テスト投稿の場合
@@ -83,8 +83,8 @@ class LineApiController extends Controller
             Log::info("the type is" . $type);
             break;
     }
-
-    return;
+    */
+    return 'ok';
     }
     
     // メッセージ送信用
