@@ -84,7 +84,7 @@ class LineApiController extends Controller
             break;
     }
 
-    return;
+    return $reply_token;
     }
     
     // メッセージ送信用
