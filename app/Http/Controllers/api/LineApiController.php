@@ -39,9 +39,10 @@ class LineApiController extends Controller
                 // file_put_contents($file, print_r($event, true) . PHP_EOL, FILE_APPEND);
                 // 入力した文字取得
                 $message = $event->getText();
+                $message2 = "#shorts $message";
                 $replyToken = $event->getReplyToken();
                 $app2 = app()->make('App\Http\Controllers\YouTubeController');
-                $results = $app2->line_videoLists($message);
+                $results = $app2->line_videoLists($message2);
                 $id = $results->items[0]->id->videoId;
                 $url="https://www.youtube.com/embed/$id";
                 $textMessage = new TextMessageBuilder($url);
