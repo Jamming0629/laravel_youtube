@@ -36,6 +36,10 @@ class LineApiController extends Controller
         foreach($events as $event){
             $lien_id = $event->getUserId();
             $replyToken = $event->getReplyToken();
+            if ($reply_token == '00000000000000000000000000000000') {
+                Log::info('Succeeded');
+                return;
+            }
             switch($event){
                 case($event instanceof FollowEvent):
                     $message='友達登録ありがとう';
