@@ -83,7 +83,7 @@ class YouTubeController extends Controller
         $maxResults = 12;
         $youTubeEndPoint = config('services.youtube.search_endpoint');
         $type = 'video'; // You can select any one or all, we are getting only videos
-        $videoDuration = 'shorts';
+        $videoDuration = 'short';
         //$videoType = 'short';
         //$eventType = 'completed';
 
