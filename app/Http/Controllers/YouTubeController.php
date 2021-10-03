@@ -67,4 +67,12 @@ class YouTubeController extends Controller
         File::put(storage_path() . '/app/public/single.json', $response->body());
         return $results;
     }
+    
+     public function line_results(Request $request)
+    {
+        session(['search_query' => $request->search_query]);
+        $videoLists = $this->_videoLists($request->search_query);
+        return('results');
+        //return view('results', compact('videoLists'));
+    }
 }
