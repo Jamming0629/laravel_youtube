@@ -78,7 +78,7 @@ class YouTubeController extends Controller
     public function line_videoLists($keywords)
     {
         $part = 'snippet';
-        $country = 'BD';
+        $country = 'JP';
         $apiKey = config('services.youtube.api_key');
         $maxResults = 12;
         $youTubeEndPoint = config('services.youtube.search_endpoint');
