@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['namespace' => 'Api'], function() {
     // LineからのWebhookを受信
-    Route::post('/line/webhook', 'App\Http\Controllers\LineApiController@webhook')->name('line.webhook');
+    Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
 });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
