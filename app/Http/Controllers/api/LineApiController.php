@@ -40,8 +40,8 @@ class LineApiController extends Controller
                 // 入力した文字取得
                 $message = $event->getText();
                 $replyToken = $event->getReplyToken();
-                $results = app()->make('App\Http\Controllers\YouTubeController');
-                $results->results($message);
+                $app2 = app()->make('App\Http\Controllers\YouTubeController');
+                $results = $app2->line_videoLists($message);
                 $textMessage = new TextMessageBuilder($results);
                 $lineBot->replyMessage($replyToken, $textMessage);
             }

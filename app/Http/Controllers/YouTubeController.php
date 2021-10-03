@@ -75,4 +75,21 @@ class YouTubeController extends Controller
         return('results');
         //return view('results', compact('videoLists'));
     }
+    protected function line_videoLists($keywords)
+    {
+        $part = 'snippet';
+        $country = 'BD';
+        $apiKey = config('services.youtube.api_key');
+        $maxResults = 12;
+        $youTubeEndPoint = config('services.youtube.search_endpoint');
+        $type = 'video'; // You can select any one or all, we are getting only videos
+
+        $url = "$youTubeEndPoint?part=$part&maxResults=$maxResults&regionCode=$country&type=$type&key=$apiKey&q=$keywords";
+        $response = Http::get($url);
+        $results = json_decode($response);
+
+        // We will create a json file to see our response
+        File::put(storage_path() . '/app/public/results.json', $response->body());
+        return $url;
+    }
 }
