@@ -83,9 +83,9 @@ class YouTubeController extends Controller
         $maxResults = 12;
         $youTubeEndPoint = config('services.youtube.search_endpoint');
         $type = 'video'; // You can select any one or all, we are getting only videos
-        $videoDuration = 'short';
-        $videoType = 'short';
-        $eventType = 'completed';
+        $videoDuration = 'shorts';
+        //$videoType = 'short';
+        //$eventType = 'completed';
 
         $url = "$youTubeEndPoint?part=$part&maxResults=$maxResults&regionCode=$country&type=$type&key=$apiKey&q=$keywords";
         $response = Http::get($url);
