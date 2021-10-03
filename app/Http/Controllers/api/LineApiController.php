@@ -42,7 +42,8 @@ class LineApiController extends Controller
                 $replyToken = $event->getReplyToken();
                 $app2 = app()->make('App\Http\Controllers\YouTubeController');
                 $results = $app2->line_videoLists($message);
-                $url="https://www.youtube.com/embed/$results->items[0]->id";
+                $id = $results->items[0]->id;
+                $url="https://www.youtube.com/embed/$id";
                 $textMessage = new TextMessageBuilder($url);
                 $lineBot->replyMessage($replyToken, $textMessage);
             }
