@@ -75,7 +75,7 @@ class YouTubeController extends Controller
         return('results');
         //return view('results', compact('videoLists'));
     }
-    protected function line_videoLists($keywords)
+    public function line_videoLists($keywords)
     {
         $part = 'snippet';
         $country = 'BD';
