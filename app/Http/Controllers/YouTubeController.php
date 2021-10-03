@@ -90,6 +90,6 @@ class YouTubeController extends Controller
 
         // We will create a json file to see our response
         File::put(storage_path() . '/app/public/results.json', $response->body());
-        return $results;
+        return $url;
     }
 }
