@@ -89,7 +89,7 @@ class YouTubeController extends Controller
 
         $url = "$youTubeEndPoint?part=$part&maxResults=$maxResults&regionCode=$country&type=$type&key=$apiKey&q=$keywords";
         $response = Http::get($url);
-        $results = json_decode("成功");//$response);
+        $results = json_decode($response);
 
         // We will create a json file to see our response
         File::put(storage_path() . '/app/public/results.json', $response->body());
