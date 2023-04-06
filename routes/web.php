@@ -35,4 +35,4 @@ Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook
 //Route::get('/login/google', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 //Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@handleGoogleCallback');
 //Route::get('/login/google/callback', 'App\Http\Controllers\YouTubeController@index')->name('index');
-Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@authGoogleCallback');
+//Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@authGoogleCallback');
