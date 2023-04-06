@@ -1,35 +1,9 @@
-## Complete YouYube with Laravel - YouTube Data API v3
+### LINEでYouTube shortsが検索できる!!!
 
-## Clone this repo
-```
-git clone https://github.com/samironbarai/laravel-youtube.git
-```
+#### 手順1:下記のQRコードをスキャンして、Find it(本アプリ)を友達追加
 
-## Install composer packages
-```
-$ cd laravel-youtube
-$ composer install
-```
+![スクリーンショット 2023-04-06 200622](https://user-images.githubusercontent.com/86952073/230360914-7a7731ca-bceb-4992-a694-1c088d6c3462.png)
 
-## Create and setup .env file
-```
-make a copy of .env.example and rename to .env
-$ copy .env.example .env
-$ php artisan key:generate
-```
+#### 手順2:見つけたいshorts動画の関連ワードを入力
 
-## Create and setup youtube api key
-```
-Put api key in .env file
-API_KEY=""
-SEARCH_ENDPOINT="https://www.googleapis.com/youtube/v3/search"
-```
-
-## Facing any problem? Contact with me
-
-Click on the image bellow to see YouTube video.
-
-[![Complele Laravel YouTube](https://img.youtube.com/vi/wy-sWNXEgg8/0.jpg)](https://www.youtube.com/watch?v=wy-sWNXEgg8) 
-
-Please visit my website.
-[samironbarai.com](https://samironbarai.com)
+#### 手順3:送られてきたコメントをクリック
