@@ -41,11 +41,11 @@ class LineApiController extends Controller
                 $message = $event->getText();
                 $message2 = "shorts $message";
                 $replyToken = $event->getReplyToken();
-                //$app2 = app()->make('App\Http\Controllers\YouTubeController');
-                //$results = $app2->line_videoLists($message2);
-                //$id = $results->items[0]->id->videoId;
-                //$url="https://www.youtube.com/embed/$id";
-                $textMessage = new TextMessageBuilder("あ");//$url);
+                $app2 = app()->make('App\Http\Controllers\YouTubeController');
+                $results = $app2->line_videoLists($message2);
+                $id = $results->items[0]->id->videoId;
+                $url="https://www.youtube.com/embed/$id";
+                $textMessage = new TextMessageBuilder($url);
                 $lineBot->replyMessage($replyToken, $textMessage);
             }
         } catch (Exception $e) {
