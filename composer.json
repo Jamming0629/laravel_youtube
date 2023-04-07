@@ -17,7 +17,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.2.5",
         "laravel/tinker": "^2.0",
-        "linecorp/line-bot-sdk": "^7.2",
+        "linecorp/line-bot-sdk": "^7.",
         "livewire/livewire": "^2.5"
     },
     "require-dev": {
