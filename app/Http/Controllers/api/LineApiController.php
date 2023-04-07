@@ -45,7 +45,7 @@ class LineApiController extends Controller
                 $results = $app2->line_videoLists($message2);
                 $id = $results->items[0]->id->videoId;
                 $url="https://www.youtube.com/embed/$id";
-                $textMessage = new TextMessageBuilder(a);//$url);
+                $textMessage = new TextMessageBuilder($url);
                 $lineBot->replyMessage($replyToken, $textMessage);
             }
         } catch (Exception $e) {
