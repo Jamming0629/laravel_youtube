@@ -38,7 +38,7 @@ class LineApiController extends Controller
                 // $file = __DIR__ . "/log.txt"
                 // file_put_contents($file, print_r($event, true) . PHP_EOL, FILE_APPEND);
                 // 入力した文字取得
-                $message = $event->getText();
+                $message = "猫"//$event->getText();
                 $message2 = "shorts $message";
                 $replyToken = $event->getReplyToken();
                 $app2 = app()->make('App\Http\Controllers\YouTubeController');
