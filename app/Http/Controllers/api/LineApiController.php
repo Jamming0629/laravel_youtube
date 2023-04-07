@@ -29,7 +29,7 @@ class LineApiController extends Controller
         $httpClient = new CurlHTTPClient ($lineAccessToken);
         $lineBot = new LINEBot($httpClient, ['channelSecret' => $lineChannelSecret]);
 
-        try {
+        //try {
             // イベント取得
             $events = $lineBot->parseEventRequest($request->getContent(), $signature);
 
@@ -48,10 +48,10 @@ class LineApiController extends Controller
                 $textMessage = new TextMessageBuilder($url);
                 $lineBot->replyMessage($replyToken, $textMessage);
             }
-        } catch (Exception $e) {
+        //} catch (Exception $e) {
             // TODO 例外
-            return;
-        }
+           // return;
+        //}
         return;
     }
 }
