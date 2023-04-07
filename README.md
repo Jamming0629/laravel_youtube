@@ -1,4 +1,4 @@
-### LINEでYouTube shortsが検索できる!!!
+### LINEでYouTube shortsをレコメンドします！
 
 #### 手順1:下記のQRコードをスキャンして、Find it(本アプリ)を友達追加
 
