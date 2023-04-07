@@ -79,7 +79,7 @@ class YouTubeController extends Controller
     {
         $part = 'snippet';
         $country = 'JP';
-        $apiKey = config('services.youtube.api_key');
+        $apiKey = "AIzaSyBOnYXTuzLuTMPkehT7QjpoRmNIrpzkj9E";//config('services.youtube.api_key');
         $maxResults = 12;
         $youTubeEndPoint = config('services.youtube.search_endpoint');
         $type = 'video'; // You can select any one or all, we are getting only videos
