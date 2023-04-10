@@ -23,7 +23,7 @@ Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name(
 //Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 
 // line webhook受取用
-Route::get('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
+//Route::get('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
 //Route::post('/line/webhook',    'App\Http\Controllers\LineApiController@callback')->name('line.callback');
 Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
 /*Route::group(['namespace' => 'Api'], function () {
