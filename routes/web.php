@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
     return 'welcome';
 });*/
 
-//Route::get('/index', 'App\Http\Controllers\YouTubeController@index')->name('index');
+Route::get('/index', 'App\Http\Controllers\YouTubeController@index')->name('index');
 Route::get('/', 'App\Http\Controllers\YouTubeController@index')->name('index');
-Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
+//Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
 Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name('watch');
 //Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 
