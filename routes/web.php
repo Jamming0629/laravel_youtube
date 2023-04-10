@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 // line webhook受取用
 //Route::get('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
 //Route::post('/line/webhook',    'App\Http\Controllers\LineApiController@callback')->name('line.callback');
-Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
+Route::get('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
 /*Route::group(['namespace' => 'Api'], function () {
     Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
 });*/
