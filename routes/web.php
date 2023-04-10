@@ -17,15 +17,15 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 //Route::get('/index', 'App\Http\Controllers\YouTubeController@index')->name('index');
-//Route::get('/', 'App\Http\Controllers\YouTubeController@index')->name('index');
-//Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
-//Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name('watch');
+Route::get('/', 'App\Http\Controllers\YouTubeController@index')->name('index');
+Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
+Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name('watch');
 //Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 
 // line webhook受取用
 //Route::get('/line/webhook',    'App\Http\Controllers\LineApiController@postWebhook');
 //Route::post('/line/webhook',    'App\Http\Controllers\LineApiController@callback')->name('line.callback');
-//Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
+Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook')->name('line.webhook');
 /*Route::group(['namespace' => 'Api'], function () {
     Route::post('/line/callback', 'LineBotController@callback')->name('line.callback');
 });*/
