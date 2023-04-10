@@ -123,7 +123,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
     
-    'asset_url' => env('ASSET_URL', 'https://vast-brushlands-90603.herokuapp.com'),
+    'asset_url' => env('ASSET_URL', 'https://finding-youtube.herokuapp.com'),
     //'debug' => env('APP_DEBUG', true),
     //'key' => env('APP_KEY', 'SomeRandomStringSomeRandomString'),
 
