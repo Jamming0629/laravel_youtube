@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
     return 'welcome';
 });*/
 
-//Route::get('/index', 'App\Http\Controllers\YouTubeController@index')->name('index');
-Route::get('/', 'App\Http\Controllers\YouTubeController@index')->name('index');
-//Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
-//Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name('watch');
+Route::get('/index', 'App\Http\Controllers\YouTubeController@index')->name('index');
+//Route::get('/', 'App\Http\Controllers\YouTubeController@index')->name('index');
+Route::get('/results', 'App\Http\Controllers\YouTubeController@results')->name('results');
+Route::get('/watch/{id}', 'App\Http\Controllers\YouTubeController@watch')->name('watch');
 //Route::get('/', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 
 // line webhook受取用
@@ -35,4 +35,4 @@ Route::post('/line/webhook', 'App\Http\Controllers\api\LineApiController@webhook
 //Route::get('/login/google', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle');
 //Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@handleGoogleCallback');
 //Route::get('/login/google/callback', 'App\Http\Controllers\YouTubeController@index')->name('index');
-//Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@authGoogleCallback');
+Route::get('/login/google/callback', 'App\Http\Controllers\Auth\LoginController@authGoogleCallback');
